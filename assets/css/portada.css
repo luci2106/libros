@@ -1,0 +1,12 @@
+.image-container {
+    display: flex; /* Utilizamos flexbox para organizar las imágenes */
+    justify-content: space-between; /* Distribuye el espacio entre las imágenes */
+    
+    flex-wrap: wrap;
+}
+
+.image-container img {
+    max-width: 20%; /* Las imágenes no pueden ser más anchas que su contenedor */
+    height: auto; /* Mantiene la proporción de aspecto de las imágenes */
+    margin-right: 10px; /* Espacio entre las imágenes */
+}

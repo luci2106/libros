@@ -1,24 +1,26 @@
 <?php
 session_start();
 include "prueba.php";
+
 if (isset($_SESSION["user"])) {
-    header("Location: user.php");
+    header("Location: user.php"); // Si el usuario ya está autenticado, redirígelo a la página de usuario
     exit();
 }
-if (isset($_POST["email"])) {
 
+if (isset($_POST["email"])) {
     include("conexion.php");
     $email = $_POST["email"];
     $password = $_POST["password"];
-    $sql = "select * from usuarios where email=? and password=?";
+    $sql = "select * from user where email=? and password=?";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(1,$email);
     $stmt->bindParam(2,$password);
     $stmt->execute();
-    if ($stmt->rowCount()>0) {
+    
+    if ($stmt->rowCount() > 0) {
         $_SESSION["user"] = $email;
         $_SESSION["datos"] = "otros datos";
-        header("Location: user.php");
+        header("Location: portada.php"); // Redirige al usuario a la página de portada después del inicio de sesión exitoso
         exit();
     } else {
         $error = "Email or password incorrect";
@@ -38,46 +40,42 @@ if (isset($_POST["email"])) {
               <div class="card-body p-md-5 mx-md-4">
 
                 <div class="text-center">
-                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
+                  <img src="assets\img\lotus.webp"
                     style="width: 185px;" alt="logo">
-                  <h4 class="mt-1 mb-5 pb-1">We are The Lotus Team</h4>
+                  <h4 class="mt-1 mb-5 pb-1">yes , we can</h4>
                 </div>
 
-                <form>
-                  <p>Please login to your account</p>
+                <form action="" method="POST">
 
-                  <div data-mdb-input-init class="form-outline mb-4">
-                    <input type="email" id="form2Example11" class="form-control"
-                      placeholder="Phone number or email address" />
-                    <label class="form-label" for="form2Example11">Username</label>
-                  </div>
+  <!-- Añade el atributo name a los campos de entrada para que puedan ser identificados en PHP -->
+  <div data-mdb-input-init class="form-outline mb-4">
+    <input type="email" id="form2Example11" class="form-control" name="email" placeholder="Phone number or email address" />
+    <label class="form-label" for="form2Example11">Username</label>
+  </div>
 
-                  <div data-mdb-input-init class="form-outline mb-4">
-                    <input type="password" id="form2Example22" class="form-control" />
-                    <label class="form-label" for="form2Example22">Password</label>
-                  </div>
+  <div data-mdb-input-init class="form-outline mb-4">
+    <input type="password" id="form2Example22" class="form-control" name="password" />
+    <label class="form-label" for="form2Example22">Password</label>
+  </div>
 
-                  <div class="text-center pt-1 mb-5 pb-1">
-                    <button data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="button">Log
-                      in</button>
-                    <a class="text-muted" href="#!">Forgot password?</a>
-                  </div>
+  <!-- Cambia el tipo de botón a submit para que envíe los datos del formulario -->
+  <div class="text-center pt-1 mb-5 pb-1">
+    <button data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit">Log in</button>
+    <a class="text-muted" href="#!">Forgot password?</a>
+  </div>
 
-                  <div class="d-flex align-items-center justify-content-center pb-4">
-                    <p class="mb-0 me-2">Don't have an account?</p>
-                    <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-danger">Create new</button>
-                  </div>
+</form>
 
-                </form>
+                
 
               </div>
             </div>
             <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
               <div class="text-white px-3 py-4 p-md-5 mx-md-4">
                 <h4 class="mb-4">We are more than just a company</h4>
-                <p class="small mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p class="small mb-0">Hola,!!!!PELIGRO ¡¡¡¡¡¡ 
+                        ESTA EN UNA PÁGINA EN LA QUE SE PUEDEN ENCONTRAR UNA SERIE DE LIBROS PARA LOS QUE QUIERAN  EMPEZAR A SUMERGIRSE  EN EL MUNDO DE LA NEUROPSICCOLOGÍA
+                   estás entrando en el mundo de la neuropsicología, cuidado, aún que no parezaca es apasionante</p>
               </div>
             </div>
           </div>
@@ -86,6 +84,5 @@ if (isset($_POST["email"])) {
     </div>
   </div>
 </section>
-Sign in form
     
 <?php include("./templates/footer.php");?>
