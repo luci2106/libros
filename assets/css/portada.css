@@ -1,12 +1,30 @@
-.image-container {
+/*.image-container {
     display: flex; /* Utilizamos flexbox para organizar las imágenes */
-    justify-content: space-between; /* Distribuye el espacio entre las imágenes */
+    /*justify-content: space-between; /* Distribuye el espacio entre las imágenes */
     
-    flex-wrap: wrap;
-}
+   /* flex-wrap: wrap;
+}*
 
 .image-container img {
     max-width: 20%; /* Las imágenes no pueden ser más anchas que su contenedor */
-    height: auto; /* Mantiene la proporción de aspecto de las imágenes */
+   /* height: auto; /* Mantiene la proporción de aspecto de las imágenes */
+    /*margin-right: 10px; /* Espacio entre las imágenes */
+
+
+
+.galeria {
+    display: flex; /* Utilizamos flexbox para mostrar las imágenes en línea */
+}
+
+/* Estilos para cada imagen */
+.imagen {
     margin-right: 10px; /* Espacio entre las imágenes */
+    border: 2px solid purple; /* Borde de color morado */
+}
+
+/* Estilos para la imagen dentro de cada contenedor */
+.imagen img {
+    display: block; /* Evita que las imágenes tengan un espacio adicional debajo */
+    max-width: 100%; /* Las imágenes no pueden ser más anchas que su contenedor */
+    height: auto; /* Mantiene la proporción de aspecto de las imágenes */
 }

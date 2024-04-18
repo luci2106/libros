@@ -3,7 +3,7 @@ session_start();
 include "prueba.php";
 
 if (isset($_SESSION["user"])) {
-    header("Location: user.php"); // Si el usuario ya está autenticado, redirígelo a la página de usuario
+    header("Location: portada.php"); // Si el usuario ya está autenticado, redirígelo a la página de usuario
     exit();
 }
 
