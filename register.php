@@ -62,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="text-center">
                   <img src="assets/img/lotus.webp"
                     style="width: 185px;" alt="logo">
-                  <h4 class="mt-1 mb-5 pb-1">We are The Lotus Team</h4>
+                  <h4 class="mt-1 mb-5 pb-1">ARE YOU READ</h4>
                 </div>
 
                 <form>
@@ -82,7 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                   <div class="text-center pt-1 mb-5 pb-1">
                     <button data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="button">Log
                       in</button>
-                    <a class="text-muted" href="#!">Forgot password?</a>
+                    <a class="text-muted" href="#!">TE OLVIDASTE TU PASSWORD?</a>
                   </div>
 
                   <div class="d-flex align-items-center justify-content-center pb-4">

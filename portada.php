@@ -57,6 +57,51 @@
 
 
 
+<h2>Formulario para Añadir Libros</h2>
+
+<form action="register.php" method="post">
+    <label for="titulo">Título del libro:</label>
+    <input type="text" id="titulo" name="titulo" required><br><br>
+    
+    <label for="autor">Autor del libro:</label>
+    <input type="text" id="autor" name="autor" required><br><br>
+    
+    <label for="anio">Año de publicación:</label>
+    <input type="number" id="anio" name="anio" required><br><br>
+    
+    
+    
+    <!-- Agrega más campos según sea necesario (por ejemplo, sinopsis, editorial, etc.) -->
+    
+    <input type="submit" value="Añadir Libro">
+</form>
+
+<form action="register.php" method="post">
+    <label for="titulo">Título del libro:</label>
+    <input type="text" id="titulo" name="titulo" required><br><br>
+    
+    <label for="autor">Autor del libro:</label>
+    <input type="text" id="autor" name="autor" required><br><br>
+    
+    <label for="anio">Año de publicación:</label>
+    <input type="number" id="anio" name="anio" required><br><br>
+    
+    <label for="genero">Género del libro:</label>
+    <input type="text" id="genero" name="genero" required><br><br>
+    
+    <!-- Agrega más campos según sea necesario (por ejemplo, sinopsis, editorial, etc.) -->
+    
+    <input type="submit" value="Añadir Libro">
+</form>
+
+<!-- Botón para volver a la página de registro -->
+<a href="formulario_registro.html">Volver al Formulario de Registro</a>
+
+
+
+
+
+
 
 </body>
 </html>
